@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CircleUp — Your Region, Your People</title>
+  <style>
+    :root {
+      --bg: #f2f5fb;
+      --card: #ffffff;
+      --primary: #2563eb;
+      --secondary: #4f46e5;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #22c55e;
+      --danger: #ef4444;
+      --shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: 260px 1fr 320px;
+      min-height: 100vh;
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .panel {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+
+    .brand {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .tagline {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .sidebar-btn {
+      display: block;
+      width: 100%;
+      border: 0;
+      border-radius: 10px;
+      padding: 10px 12px;
+      text-align: left;
+      margin-bottom: 8px;
+      background: #eff6ff;
+      color: #1e3a8a;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: 1rem;
+      margin: 0 0 10px 0;
+      color: #111827;
+    }
+
+    .composer textarea {
+      width: 100%;
+      min-height: 80px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      padding: 10px;
+      resize: vertical;
+      font: inherit;
+    }
+
+    .row {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    select, input, button {
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      padding: 10px;
+      font: inherit;
+    }
+
+    button.primary {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .feed { display: grid; gap: 12px; margin-top: 12px; }
+
+    .post {
+      background: var(--card);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-right: 6px;
+      background: #eef2ff;
+      color: #4338ca;
+    }
+
+    .list { display: grid; gap: 8px; }
+    .list-item {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mini-btn {
+      border: 0;
+      padding: 8px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #dbeafe;
+      color: #1e40af;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .success { color: var(--accent); font-weight: 700; }
+
+    @media (max-width: 1100px) {
+      .app { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <aside class="panel">
+      <div class="brand">CircleUp</div>
+      <div class="tagline">A Facebook-style social app built to reduce loneliness among youth.</div>
+      <button class="sidebar-btn">🏠 Home Feed</button>
+      <button class="sidebar-btn">👥 Friends</button>
+      <button class="sidebar-btn">🌍 Regional Communities</button>
+      <button class="sidebar-btn">🎮 Play Lounge</button>
+      <button class="sidebar-btn">📚 Book Clubs</button>
+      <button class="sidebar-btn">🎤 Sing Together</button>
+      <button class="sidebar-btn">📞 Calls</button>
+    </aside>
+
+    <section>
+      <div class="panel composer">
+        <h2 class="section-title">Create Post (like Facebook timeline)</h2>
+        <textarea id="postText" placeholder="Share how you're feeling, ask for a friend, invite people to chess/singing/book club..."></textarea>
+        <div class="row">
+          <select id="region">
+            <option value="My Region">My Region</option>
+            <option value="Nearby">Nearby Region</option>
+            <option value="Global">Outside Region</option>
+          </select>
+          <select id="topic">
+            <option value="Friendship">Friendship</option>
+            <option value="Chess">Chess</option>
+            <option value="Singing">Singing</option>
+            <option value="Books">Books</option>
+            <option value="Voice/Video Call">Voice/Video Call</option>
+          </select>
+          <button class="primary" id="publishBtn">Publish</button>
+        </div>
+      </div>
+
+      <div class="feed" id="feed"></div>
+    </section>
+
+    <aside class="panel">
+      <h3 class="section-title">Suggested Communities</h3>
+      <div class="list" id="communityList"></div>
+
+      <h3 class="section-title" style="margin-top: 18px;">Instant Connect</h3>
+      <div class="list">
+        <div class="list-item"><span>🎮 1v1 Chess Matchmaking</span><button class="mini-btn" data-action="join chess">Join</button></div>
+        <div class="list-item"><span>🎤 Open Mic Singing Room</span><button class="mini-btn" data-action="join singing">Join</button></div>
+        <div class="list-item"><span>📚 Quiet Reading Circle</span><button class="mini-btn" data-action="join reading">Join</button></div>
+        <div class="list-item"><span>📞 Start Video Call Room</span><button class="mini-btn" data-action="start video room">Start</button></div>
+      </div>
+      <p id="status" class="success" style="min-height: 24px;"></p>
+    </aside>
+  </main>
+
+  <script>
+    const starterPosts = [
+      {
+        author: "Aanya, 19",
+        region: "My Region",
+        topic: "Friendship",
+        text: "Just moved here for college and looking for new friends to explore cafes + board games!"
+      },
+      {
+        author: "Luis, 22",
+        region: "Global",
+        topic: "Chess",
+        text: "Anyone up for daily rapid chess practice and strategy talks over voice call?"
+      },
+      {
+        author: "Mina, 20",
+        region: "Nearby",
+        topic: "Books",
+        text: "Starting a weekly fantasy book club. We read together and discuss on video every Sunday."
+      }
+    ];
+
+    const communities = [
+      { name: "City Youth Connect", members: "2.1k" },
+      { name: "Night Owl Chess Club", members: "980" },
+      { name: "Campus Sing Circle", members: "1.4k" },
+      { name: "Readers & Dreamers", members: "1.1k" }
+    ];
+
+    const feed = document.getElementById("feed");
+    const communityList = document.getElementById("communityList");
+    const status = document.getElementById("status");
+
+    function renderPost(post) {
+      const card = document.createElement("article");
+      card.className = "post";
+      card.innerHTML = `
+        <div class="meta"><strong>${post.author}</strong> • ${new Date().toLocaleString()}</div>
+        <span class="pill">${post.region}</span><span class="pill">${post.topic}</span>
+        <p>${post.text}</p>
+        <div class="row">
+          <button class="mini-btn">❤️ Support</button>
+          <button class="mini-btn">💬 Comment</button>
+          <button class="mini-btn">🤝 Connect</button>
+          <button class="mini-btn">📞 Call</button>
+        </div>
+      `;
+      feed.prepend(card);
+    }
+
+    function renderCommunities() {
+      communities.forEach((community) => {
+        const item = document.createElement("div");
+        item.className = "list-item";
+        item.innerHTML = `<span>${community.name}<br><small>${community.members} members</small></span><button class="mini-btn">Join</button>`;
+        communityList.appendChild(item);
+      });
+    }
+
+    document.getElementById("publishBtn").addEventListener("click", () => {
+      const text = document.getElementById("postText").value.trim();
+      const region = document.getElementById("region").value;
+      const topic = document.getElementById("topic").value;
+
+      if (!text) {
+        status.textContent = "Please write something before publishing.";
+        status.style.color = "#ef4444";
+        return;
+      }
+
+      renderPost({
+        author: "You",
+        region,
+        topic,
+        text
+      });
+
+      document.getElementById("postText").value = "";
+      status.textContent = "Post published. You are now visible to potential friends!";
+      status.style.color = "#22c55e";
+    });
+
+    document.querySelectorAll("[data-action]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const action = btn.getAttribute("data-action");
+        status.textContent = `Great! Preparing to ${action}...`;
+        status.style.color = "#22c55e";
+      });
+    });
+
+    starterPosts.forEach(renderPost);
+    renderCommunities();
+  </script>
+</body>
+</html>
