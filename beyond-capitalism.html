@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="An essay on artificial intelligence, capitalism, ownership, inequality and the future of human work by Dibyadyoti Sarkar.">
+<meta name="theme-color" content="#f5f2eb">
+<title>Beyond Capitalism — Dibyadyoti Sarkar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f5f2eb;--ink:#24231f;--muted:#77736b;--line:#d9d4c9;--accent:#a34e35;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit} .topbar{height:70px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(24px,calc((100vw - 1120px)/2));font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.brand{font-weight:700;text-decoration:none;letter-spacing:.15em}.brand span{color:var(--accent)}.topbar nav{display:flex;gap:25px}.topbar nav a{text-decoration:none;color:var(--muted)}.topbar nav a:hover{color:var(--accent)}
+.hero{max-width:1120px;margin:0 auto;padding:100px 28px 76px;border-bottom:1px solid var(--line)}.kicker,.meta,.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}.hero h1{font:600 clamp(52px,8vw,100px)/1.02 var(--serif);letter-spacing:-.045em;max-width:920px;margin:25px 0}.hero h1 em{font-weight:500}.dek{font:italic clamp(20px,2.5vw,27px)/1.5 var(--serif);color:#625e56;max-width:800px;margin:0 0 30px}.meta{color:var(--muted);letter-spacing:.1em;font-size:10px}
+.layout{max-width:1120px;margin:0 auto;padding:64px 28px 120px;display:grid;grid-template-columns:190px minmax(0,720px);gap:80px;align-items:start}
+.toc{position:sticky;top:30px}.toc p{font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);font-weight:700;margin:0 0 18px}.toc a{display:block;text-decoration:none;color:var(--muted);font-size:12px;line-height:1.45;padding:7px 0;border-bottom:1px solid rgba(217,212,201,.7)}.toc a:hover{color:var(--accent)}
+.article{font:17px/1.9 var(--serif);color:#37352f}.article p{margin:0 0 25px}.article h2{font:600 clamp(30px,4vw,42px)/1.16 var(--serif);letter-spacing:-.025em;margin:76px 0 23px;scroll-margin-top:24px}.article h2:before{content:"";display:block;width:34px;height:2px;background:var(--accent);margin-bottom:18px}.article em{font-style:italic}.article strong{font-weight:700}.article blockquote{margin:42px 0;padding:8px 0 8px 25px;border-left:2px solid var(--accent);font:italic 24px/1.55 var(--serif);color:#4d4941}.article .question{margin:34px 0;padding:22px 25px;background:#ebe6dc;border-left:2px solid var(--accent);font-style:italic}.article .endnote{font:italic 19px/1.75 var(--serif);margin-top:48px;padding-top:28px;border-top:1px solid var(--line)}
+.reading{margin-top:90px;padding-top:40px;border-top:1px solid var(--line);scroll-margin-top:25px}.reading h2{margin-top:0}.reading-intro{color:var(--muted);font:italic 16px/1.7 var(--serif);margin-bottom:28px}.reference{padding:22px 0;border-top:1px solid var(--line)}.reference h3{font:600 21px/1.35 var(--serif);margin:0 0 9px}.reference p{font-size:15px;line-height:1.7;margin:0 0 12px}.reference .read-link{color:var(--accent);font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid #c7a394;padding-bottom:2px}.reference .question{background:none;border:0;border-left:1px solid var(--accent);padding:3px 0 3px 14px;margin:14px 0 0;font:italic 15px/1.6 var(--serif);color:#625e56}.closing{margin-top:55px;padding:32px;background:#ebe6dc}.closing h3{font:600 27px var(--serif);margin:0 0 14px}.closing p{margin:0;font-size:16px;line-height:1.8}
+.footer{border-top:1px solid var(--line);padding:26px max(24px,calc((100vw - 1120px)/2));display:flex;justify-content:space-between;color:var(--muted);font-size:11px;letter-spacing:.06em;text-transform:uppercase}.footer a{text-decoration:none;color:var(--accent)}
+.progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0;z-index:20}
+@media(max-width:800px){.topbar{padding:0 20px}.topbar nav{gap:13px}.layout{display:block;padding:42px 24px 80px}.toc{position:static;margin-bottom:45px;padding:18px;background:#ebe6dc}.toc a{display:inline-block;margin-right:15px;border:0}.hero{padding:70px 24px 55px}.article{font-size:16px}.footer{padding:22px 24px}}
+@media(max-width:480px){.topbar nav a:nth-child(n+3){display:none}.hero h1{font-size:51px}.article h2{margin-top:55px}.footer{gap:12px;flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<header class="topbar"><a class="brand" href="index.html">DIBYADYOTI<span>01</span></a><nav><a href="index.html">Home</a><a href="writing.html">All writing</a><a href="about.html">About</a></nav></header>
+<header class="hero"><div class="kicker">An essay · Technology, economics & society</div><h1>Beyond Capitalism: <em>Is Artificial Intelligence Taking Us Towards an Economy We Have Never Known?</em></h1><p class="dek">From Nehru's Fabian socialist imagination to the rise of corporate capitalism, from the economics of scarcity to the possibility of technological abundance — perhaps AI is forcing us to reconsider what an economy is actually meant to achieve.</p><div class="meta">Dibyadyoti Sarkar &nbsp;·&nbsp; 30 October 2026 &nbsp;·&nbsp; 12–15 min read</div></header>
+<div class="layout">
+<aside class="toc"><p>In this essay</p><a href="#india">01 · Nehru to liberalisation</a><a href="#greed">02 · Capitalism & greed</a><a href="#marx">03 · The Marxian question</a><a href="#scarcity">04 · Economics of scarcity</a><a href="#planet">05 · The planet</a><a href="#politics">06 · The political revolution</a><a href="#human">07 · Being human</a><a href="#end">08 · Is capitalism ending?</a><a href="#further-reading">Further reading</a></aside>
+<main class="article">
+<p>I've been thinking about a rather uncomfortable possibility lately: what if artificial intelligence eventually makes the economic system we've spent centuries building increasingly difficult to sustain?</p>
+<p>Not necessarily because capitalism stops working, but because the very assumptions on which it operates might begin to change.</p>
+<p>For centuries, human civilisation has organised itself around scarcity. Resources are limited, labour is finite, production requires capital, and access to goods and services is determined by purchasing power. Capitalism emerged as one of the most effective systems for organising production, allocating resources through markets and incentivising innovation.</p>
+<p>But what happens when the cost of producing certain things begins to approach zero? What happens when intelligence itself becomes increasingly abundant? What happens when machines can perform a substantial proportion of the work that humans have historically depended upon for their livelihoods?</p>
+<p>Perhaps the AI revolution is not simply another technological revolution. Perhaps it is the beginning of a much deeper economic and philosophical disruption.</p>
+<p>And to understand why, I think it is worth looking backwards.</p>
+
+<h2 id="india">The Indian experiment: From Nehru to liberalisation</h2>
+<p>India's economic history offers an interesting illustration of how societies have attempted to reconcile economic growth with social justice.</p>
+<p>When India became independent in 1947, it inherited an extraordinarily difficult economic landscape. Poverty, limited industrialisation, inadequate infrastructure and dependence on agriculture meant that the new republic had to build its productive capacity almost from scratch.</p>
+<p>Nehru's economic imagination was heavily influenced by socialist thinking and the Fabian tradition of gradual, democratic social transformation. He believed that the state had to play a central role in industrialisation, scientific development and the creation of economic infrastructure.</p>
+<p>There was something fascinating about that vision. The objective was not merely to increase private wealth but to create the foundations of a modern economy.</p>
+<p>The Five-Year Plans, public-sector enterprises, IITs, scientific institutions, heavy industries and infrastructure projects were all part of this larger developmental imagination.</p>
+<p>India was attempting to build an economy in which the state would provide the foundations for industrial progress while private enterprise continued to operate within a regulated mixed economy.</p>
+<p>But there was a contradiction.</p>
+<p>Over time, the very mechanisms designed to regulate and direct economic development began creating inefficiencies. Excessive licensing, bureaucratic discretion, import restrictions and limited competition constrained several sectors.</p>
+<p>The License-Permit Raj became a symbol of this institutional rigidity.</p>
+<p>Then came 1991.</p>
+<p>Economic liberalisation fundamentally changed India's relationship with markets, private enterprise and the global economy. The reforms associated with Narasimha Rao and Manmohan Singh opened up sectors, encouraged investment, reduced licensing requirements and expanded India's integration with global markets.</p>
+<p>A different economic imagination began to take shape.</p>
+<p>Private capital became increasingly important. Entrepreneurship expanded. The IT revolution created new opportunities. Indian corporations became global players.</p>
+<p>But there is an interesting question here: did the transition from a state-dominated economy to a market-oriented economy necessarily resolve the problem of equitable distribution?</p>
+<p>Not entirely.</p>
+<p>India experienced substantial economic growth, but the distribution of wealth remained highly unequal. The World Inequality Lab's 2024 research estimated that the top 1% held around 40.1% of India's wealth in 2022–23.</p>
+<p>This is not an argument against liberalisation or private enterprise. Markets can generate innovation, investment and efficiency. But economic growth and equitable distribution are not the same thing.</p>
+<p>And somewhere along this journey, another question emerged: when does productive capitalism begin transforming into concentrated economic power?</p>
+
+<h2 id="greed">The curious relationship between capitalism and greed</h2>
+<p>Capitalism has an interesting relationship with human nature.</p>
+<p>It takes an essentially human characteristic — the desire to accumulate — and converts it into an economic incentive.</p>
+<p>The pursuit of profit can encourage innovation, competition, investment and efficiency. Without incentives, economic systems can struggle to allocate resources effectively or encourage risk-taking.</p>
+<p>But there is a distinction between the pursuit of profit and the concentration of economic power.</p>
+<p>When businesses compete, consumers benefit from better products, lower prices and innovation. When competition weakens and market power becomes concentrated, the economic system can begin rewarding ownership and privileged access more than productive contribution.</p>
+<p>This is where crony capitalism becomes relevant.</p>
+<p>The problem is not that individuals accumulate wealth. The problem arises when economic power becomes sufficiently concentrated to influence the rules of the economy itself.</p>
+<p>And this is precisely where AI introduces an interesting possibility.</p>
+<p>What if the next generation of productive assets is owned by an even smaller group of corporations?</p>
+<p>What if the machines that produce much of our economic output belong to a handful of entities?</p>
+<p>Would we be witnessing the evolution of capitalism, or the emergence of an entirely new form of economic hierarchy?</p>
+
+<h2 id="marx">The Marxian question returns, but with a technological twist</h2>
+<p>Karl Marx's central concern was the ownership of the means of production.</p>
+<p>He questioned a system in which workers contributed their labour while ownership of productive assets and the resulting economic surplus remained concentrated.</p>
+<p>For decades, this debate was largely understood through factories, land, machinery and industrial capital.</p>
+<p>AI changes the context.</p>
+<p>Imagine a world where machines can write software, conduct research, manage supply chains, provide professional services and eventually operate much of the physical infrastructure required for production.</p>
+<p>The economic importance of human labour could decline in several sectors.</p>
+<p>But would ownership become more democratic?</p>
+<p>Not necessarily.</p>
+<p>In fact, the opposite could happen.</p>
+<p>The companies that own computing infrastructure, advanced AI models, proprietary datasets, robotics and energy infrastructure could accumulate an extraordinary proportion of economic power.</p>
+<p>We might end up with a rather strange economic arrangement: machines producing increasing amounts of wealth, while the majority of people remain dependent on income mechanisms designed around selling their labour.</p>
+<p>The contradiction is obvious.</p>
+<p>If human labour becomes less necessary for production, but remains necessary for earning an income, what happens to the economic foundations of society?</p>
+<p>Perhaps the biggest challenge AI presents to capitalism is not unemployment. It is the possibility that the relationship between labour and purchasing power could gradually become dysfunctional.</p>
+
+<h2 id="scarcity">The economics of scarcity might be changing</h2>
+<p>This is where I find the entire discussion particularly fascinating.</p>
+<p>Think about how much of our economic activity is fundamentally connected to scarcity.</p>
+<p>Education is expensive because quality teaching requires resources and skilled individuals. Healthcare is expensive because medical expertise, infrastructure and equipment are limited. Scientific research requires enormous investments in human capital and specialised infrastructure.</p>
+<p>AI could substantially reduce the cost of several of these activities.</p>
+<p>Imagine personalised education available to almost everyone, AI-assisted medical consultations becoming increasingly affordable, scientific research accelerating through automated discovery and manufacturing becoming substantially more efficient through robotics.</p>
+<p>We could potentially produce more with fewer human working hours.</p>
+<p>Keynes had imagined something resembling this possibility almost a century ago in his essay <em>Economic Possibilities for our Grandchildren</em>. He wondered whether technological progress could eventually solve the economic problem of material necessity and allow humanity to devote more time to living rather than working.</p>
+<p>But there is a distinction that we cannot ignore.</p>
+<p>Reducing the cost of production does not automatically make the resulting goods and services accessible to everyone.</p>
+<p>A society can have enough productive capacity to provide excellent healthcare and education while millions remain unable to afford them.</p>
+<p>The problem of scarcity may gradually become a problem of ownership and distribution.</p>
+<p>And perhaps that is the real economic paradox of AI.</p>
+
+<h2 id="planet">But there is another scarcity we rarely discuss: the planet itself</h2>
+<p>There is a limit to how far we can take the economics of abundance.</p>
+<p>We live on a planet with finite ecological resources. Minerals have to be extracted, freshwater has to be managed, land has competing uses and energy production has environmental consequences.</p>
+<p>The conventional pursuit of economic growth has often treated natural resources as inputs whose environmental costs can be externalised.</p>
+<p>This creates a fundamental contradiction.</p>
+<p>Can an economic system built around continuous capital accumulation and expanding consumption function indefinitely on a planet with finite ecological capacity?</p>
+<p>AI might help us use resources more efficiently. It could improve agricultural productivity, optimise energy consumption, reduce industrial waste and strengthen climate modelling.</p>
+<p>But AI infrastructure itself consumes energy, requires water for cooling and depends on mineral-intensive hardware.</p>
+<p>Efficiency does not automatically mean lower total consumption. Sometimes cheaper and more efficient production increases overall demand.</p>
+<p>So perhaps the future challenge is not simply to produce more. It is to produce intelligently, distribute fairly and consume sustainably.</p>
+
+<h2 id="politics">What if the next economic revolution is actually political?</h2>
+<p>This is perhaps the most important part of the entire discussion.</p>
+<p>Technology does not decide how its benefits are distributed. Institutions do.</p>
+<p>The industrial revolution did not automatically produce universal labour rights. The expansion of modern economies did not automatically eliminate poverty. Economic growth did not automatically create equality.</p>
+<p>Those outcomes depended on political movements, legislation, public institutions, taxation, welfare systems and changes in the distribution of power.</p>
+<p>Why should AI be any different?</p>
+<p>We could imagine a future where productivity gains are translated into shorter working weeks, stronger universal public services, universal basic income, public ownership stakes in critical infrastructure or new forms of social wealth.</p>
+<p>Alternatively, we could end up with an economy where a small number of corporations own an increasingly large proportion of productive capacity.</p>
+<p>Both possibilities are worth taking seriously.</p>
+<p>And this is where India's historical experience becomes relevant again.</p>
+<p>Nehru's developmental imagination was centred around the idea that economic progress should serve nation-building and broader social transformation. The 1991 reforms placed greater emphasis on markets, competition and private investment.</p>
+<p>Neither historical model provides a ready-made answer to the AI economy.</p>
+<p>Perhaps the next phase will require us to think beyond the traditional state-versus-market debate.</p>
+<p>What if certain productive technologies are best developed through private enterprise, while access to their benefits is protected through public institutions?</p>
+<p>What if computational infrastructure becomes as important to public welfare as electricity, roads and telecommunications?</p>
+<p>What if the returns from technological progress need to become a source of collective prosperity rather than simply private accumulation?</p>
+<p>These are not necessarily socialist or capitalist questions. They are questions about the institutional design of a future economy.</p>
+
+<h2 id="human">And finally, what does it mean to be human in an economy without the necessity of work?</h2>
+<p>There is one dimension of this debate that I find even more interesting.</p>
+<p>We have built much of modern society around productivity.</p>
+<p>Our identities are frequently connected to our professions. Our social standing is influenced by income. Our daily routines are structured around employment.</p>
+<p>Work provides not only money but also purpose, recognition, structure and social interaction.</p>
+<p>What happens when technological progress gradually weakens the relationship between human effort and economic output?</p>
+<p>Would we finally have more time for philosophy, scientific exploration, art, relationships and personal development?</p>
+<p>Or would we simply create another hierarchy in which economic privilege determines who gets to enjoy freedom and who remains economically dependent?</p>
+<p>Perhaps the real question is not whether AI will make humans economically redundant.</p>
+<p>It is whether we can construct a society in which human dignity is no longer measured primarily through economic productivity.</p>
+<p>Amartya Sen's idea of development as the expansion of human capabilities becomes particularly relevant here. The objective of an economy should ultimately be to expand the substantive freedoms people possess, not merely maximise output.</p>
+
+<h2 id="end">So, is capitalism coming to an end?</h2>
+<p>I don't think we can confidently predict that.</p>
+<p>Capitalism has survived enormous technological transformations. It has repeatedly adapted to new forms of production and capital accumulation.</p>
+<p>AI could become another instrument through which capitalism expands.</p>
+<p>But it could also challenge some of its fundamental assumptions.</p>
+<p>Perhaps capitalism will not disappear. Perhaps it will transform into something that combines private enterprise with much stronger mechanisms of redistribution, public ownership and universal access to essential services.</p>
+<p>Or perhaps technological ownership will become so concentrated that we will have to confront questions about economic democracy in ways that previous generations could barely imagine.</p>
+<p>I keep returning to one thought:</p>
+<blockquote>If artificial intelligence eventually makes the production of wealth increasingly independent of human labour, why should access to that wealth remain so heavily dependent on human employment?</blockquote>
+<p>Maybe the defining battle of the AI era will not be between humans and machines.</p>
+<p>It will be between different visions of how the wealth created by machines should be owned, controlled and distributed.</p>
+<p>Technology might make abundance possible.</p>
+<p>But deciding who gets to experience that abundance will remain a profoundly human and political decision.</p>
+
+<section class="reading" id="further-reading">
+<p class="eyebrow">Notes & further reading</p><h2>Going beyond<br><em>this essay.</em></h2>
+<p class="reading-intro">The following works are not necessarily endorsements of the arguments presented here. They are starting points for examining the competing intellectual traditions behind capitalism, socialism, technological progress, inequality and human development.</p>
+<div class="reference"><h3>01 · Adam Smith — <em>The Wealth of Nations</em> (1776)</h3><p>The starting point for understanding classical capitalism. Smith's discussion of markets, division of labour, productivity and specialisation remains fundamental. However, Smith's economic philosophy is considerably more nuanced than the popular interpretation of the invisible hand.</p><a class="read-link" href="https://www.econlib.org/library/Smith/smWN.html" target="_blank" rel="noopener">Read the full text ↗</a><p class="question">Is the pursuit of individual economic interest sufficient to generate collective prosperity, or does it require strong institutions and moral constraints?</p></div>
+<div class="reference"><h3>02 · Karl Marx — <em>Capital, Volume I</em> (1867)</h3><p>Perhaps the most important critique of capitalist production. Marx examines the relationship between labour, capital, surplus value and ownership of the means of production. Particularly relevant when considering an economy in which machines increasingly perform productive labour.</p><a class="read-link" href="https://www.marxists.org/archive/marx/works/1867-c1/" target="_blank" rel="noopener">Read Capital, Volume I ↗</a><p class="question">If machines increasingly replace human labour, who should own the productive assets and appropriate the economic surplus?</p></div>
+<div class="reference"><h3>03 · John Maynard Keynes — <em>Economic Possibilities for our Grandchildren</em> (1930)</h3><p>An extraordinarily relevant essay written almost a century before the contemporary AI revolution. Keynes imagined a future in which technological progress would substantially reduce the economic problem of material necessity. He anticipated that humanity might eventually work considerably fewer hours and devote more time to non-economic pursuits.</p><a class="read-link" href="https://www.economicsnetwork.ac.uk/archive/keynes_persuasion/Economic_Possibilities_for_our_Grandchildren.htm" target="_blank" rel="noopener">Read the full essay ↗</a><p class="question">If technological progress reduces the amount of labour required to produce wealth, why should the working week and our relationship with employment remain unchanged?</p></div>
+<div class="reference"><h3>04 · Karl Polanyi — <em>The Great Transformation</em> (1944)</h3><p>An important critique of the idea that markets can operate independently of society. Polanyi examines how market economies emerged historically and how attempts to organise society around self-regulating markets generated social and political responses.</p><a class="read-link" href="https://www.loc.gov/item/00064156/" target="_blank" rel="noopener">Explore the Library of Congress record ↗</a><p class="question">Can society remain politically and socially stable when essential aspects of human life become increasingly dependent on market purchasing power?</p></div>
+<div class="reference"><h3>05 · Amartya Sen — <em>Development as Freedom</em> (1999)</h3><p>A fundamental contribution to development economics. Sen argues that development should be understood through the expansion of substantive human freedoms and capabilities, rather than merely through increases in income or GDP. Also worth exploring: <em>The Idea of Justice</em> (2009).</p><a class="read-link" href="https://india.oup.com/product/development-as-freedom-9780195655261" target="_blank" rel="noopener">Explore the book ↗</a><p class="question">Should the success of an AI-driven economy be measured by its aggregate wealth or by the freedoms and opportunities available to an ordinary individual?</p></div>
+<div class="reference"><h3>06 · Thomas Piketty — <em>Capital in the Twenty-First Century</em> (2013)</h3><p>An extensive examination of wealth and income inequality, capital accumulation and the historical concentration of economic assets. Piketty's work is especially relevant to the possibility that AI-generated productivity gains could disproportionately benefit existing capital owners.</p><a class="read-link" href="https://www.jstor.org/stable/j.ctvjnrvx9" target="_blank" rel="noopener">Explore the book ↗</a><p class="question">If returns to capital grow faster than the overall economy over extended periods, can technological progress further accelerate wealth concentration?</p></div>
+<div class="reference"><h3>07 · Daron Acemoglu & Simon Johnson — <em>Power and Progress</em> (2023)</h3><p>Perhaps one of the most directly relevant contemporary books for this article. The authors argue that technological progress does not automatically translate into shared prosperity. The direction of innovation, institutional power and the distribution of its gains matter enormously.</p><a class="read-link" href="https://shapingwork.mit.edu/research/power-and-progress-our-1000-year-struggle-over-technology-and-prosperity/" target="_blank" rel="noopener">Explore the research ↗</a><p class="question">Are we developing AI to augment human capabilities or primarily to automate human labour and increase returns to capital?</p></div>
+<div class="reference"><h3>08 · Mariana Mazzucato — <em>The Entrepreneurial State</em> (2013)</h3><p>A useful counterpoint to the simplistic debate between public ownership and private enterprise. Mazzucato examines the role of government investment in creating technological breakthroughs and argues that public institutions have frequently undertaken the risks underlying innovations later commercialised by private businesses.</p><a class="read-link" href="https://marianamazzucato.com/books/the-entrepreneurial-state/entrepreneurial-state-usa/" target="_blank" rel="noopener">Explore the book ↗</a><p class="question">If public investment helps create the foundations of private technological wealth, should the public receive a proportionate share of the resulting returns?</p></div>
+<div class="reference"><h3>09 · Arundhati Roy — <em>Apocalypse Now and Then</em> (2026)</h3><p>A contemporary political and cultural critique of artificial intelligence and corporate capitalism. Roy examines the extraction and privatisation of collective human knowledge, the growing influence of AI corporations, surveillance and the environmental costs of technological infrastructure. Her argument is deliberately provocative and should be read critically alongside more empirical economic analyses.</p><a class="read-link" href="https://www.equator.org/articles/arundhati-roy-artificial-intelligence" target="_blank" rel="noopener">Read the EQUATOR essay · 15 October 2026 ↗</a><p class="question">Can collective human knowledge legitimately become the privately controlled property of corporations simply because they possess the infrastructure to process it?</p></div>
+<div class="reference"><h3>10 · Herman Daly — <em>Steady-State Economics</em></h3><p>An important starting point for ecological economics. Daly challenges the assumption that unlimited material expansion is possible on a finite planet. His work explores the relationship between economic scale, ecological limits and sustainable development.</p><p class="question">Can an economy continue pursuing unlimited material growth without exceeding the ecological limits of the planet?</p></div>
+<div class="closing"><h3>A final thought for the reader</h3><p>Perhaps none of these economists, philosophers or writers provides a complete answer to the questions raised in this essay. Smith helps us understand markets. Marx challenges us to examine ownership. Keynes asks us to imagine a future beyond economic necessity. Polanyi reminds us that markets exist within society. Sen brings human freedom into the centre of development. Piketty examines the concentration of wealth. Acemoglu questions the direction of technological progress. Mazzucato reconsiders the role of the state. Roy challenges the privatisation of collective human endeavour.</p><p style="margin-top:16px">Their disagreements are as intellectually valuable as their individual arguments. Perhaps that is where the real discussion should begin.</p><p style="margin-top:20px;font-style:italic">We have spent centuries debating how to produce more wealth. Perhaps the next century will force us to confront a more fundamental question: what kind of society should own, control and benefit from the wealth we produce?</p></div>
+</section>
+<div class="article-footer"><a href="writing.html">← Back to all writing</a><a href="#further-reading">Explore the reading list ↑</a></div>
+</main></div>
+<footer class="footer"><span>© 2026 Dibyadyoti Sarkar</span><a href="writing.html">More essays ↗</a></footer>
+<script>const bar=document.getElementById('progress');addEventListener('scroll',()=>{const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'});</script>
+</body></html>
