@@ -21,6 +21,15 @@ a{color:inherit} .topbar{height:70px;border-bottom:1px solid var(--line);display
 .progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0;z-index:20}
 @media(max-width:800px){.topbar{padding:0 20px}.topbar nav{gap:13px}.layout{display:block;padding:42px 24px 80px}.toc{position:static;margin-bottom:45px;padding:18px;background:#171720}.toc a{display:inline-block;margin-right:15px;border:0}.hero{padding:70px 24px 55px}.article{font-size:16px}.footer{padding:22px 24px}}
 @media(max-width:480px){.topbar nav a:nth-child(n+3){display:none}.hero h1{font-size:51px}.article h2{margin-top:55px}.footer{gap:12px;flex-direction:column}}
+
+/* Dark mode enforced: no light surfaces anywhere on this page */
+:root,html,body{color-scheme:dark!important;background-color:#08080d!important;color:#f2eef5!important}
+body,.topbar,.hero,.layout,.article,.reading,.reference,.footer{background-color:#08080d!important;color:#f2eef5!important}
+.toc,.article .question,.closing{background-color:#15151d!important;color:#e9e3ed!important}
+.article p,.reference p,.closing p{color:#e9e3ed!important}
+.dek,.reading-intro,.reference .question{color:#b8afbf!important}
+.topbar,.hero,.reference,.reading,.footer{border-color:#302d38!important}
+a{color:#ff75a8!important}
 </style>
 </head>
 <body>
